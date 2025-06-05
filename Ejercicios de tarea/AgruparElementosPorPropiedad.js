@@ -1,16 +1,10 @@
 function agruparPorPropiedad(arr, propiedad) {
   return arr.reduce((acumulador, objetoActual) => {
-    // Desestructuración para obtener la propiedad por la que agrupamos
     const { [propiedad]: valorPropiedad } = objetoActual;
-    
-    // Si no existe la propiedad en el acumulador, la inicializamos con array vacío
     if (!acumulador[valorPropiedad]) {
       acumulador[valorPropiedad] = [];
     }
-    
-    // Agregamos el objeto actual al grupo correspondiente
     acumulador[valorPropiedad].push(objetoActual);
-    
     return acumulador;
   }, {});
 }
